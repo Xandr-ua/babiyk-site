@@ -11,21 +11,22 @@ const aboutData = [
     title: 'skills',
     info: [
       {
+        id: 'web-development',
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiFramer />,
-          <SiNextdotjs />,
-          <FaWordpress />,
+          <FaHtml5 key="html5" />,
+          <FaCss3 key="css3" />,
+          <FaJs key="js" />,
+          <FaReact key="react" />,
+          <SiFramer key="framer" />,
+          <SiNextdotjs key="next" />,
+          <FaWordpress key="wordpress" />,
         ],
       },
-      {
-        title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
-      },
+      // {
+      //   title: 'UI/UX Design',
+      //   icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+      // },
     ],
   },
   {
@@ -164,19 +165,19 @@ const About = () => {
             })}
           </div>
           <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
-            {aboutData[index].info.map((item, itemIndex) => {
+            {aboutData[index].info.map((item) => {
               return (
                 <div
-                  key={itemIndex}
+                  key={item.id}
                   className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60">
                   {/* title */}
                   <div className="font-light mb-2 md:mb-0">{item.title}</div>
                   <div className="hiden md:flex">-</div>
                   <div>{item.stage}</div>
                   {/* icons */}
-                  {item.icons?.map((icon, itemIndex) => {
+                  {item.icons?.map((icon, iconIndex) => {
                     return (
-                      <div key={itemIndex} className="text-2xl text-white">
+                      <div key={item.id + '-' + iconIndex} className="text-2xl text-white">
                         {icon}
                       </div>
                     );
