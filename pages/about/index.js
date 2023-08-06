@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 //icons
-import { FaHtml5, FaCss3, FaJs, FaReact, FaWordpress } from 'react-icons/fa';
+import { FaHtml5, FaFigma, FaCss3, FaJs, FaReact, FaWordpress } from 'react-icons/fa';
 
-import { SiNextdotjs } from 'react-icons/si';
+import { SiNextdotjs, SiFramer, SiAdobexd, SiAdobephotoshop } from 'react-icons/si';
 
 //  data
 const aboutData = [
@@ -12,7 +12,19 @@ const aboutData = [
     info: [
       {
         title: 'Web Development',
-        icons: [<FaHtml5 />, <FaCss3 />, <FaJs />, <FaReact />, <SiNextdotjs />, <FaWordpress />],
+        icons: [
+          <FaHtml5 />,
+          <FaCss3 />,
+          <FaJs />,
+          <FaReact />,
+          <SiFramer />,
+          <SiNextdotjs />,
+          <FaWordpress />,
+        ],
+      },
+      {
+        title: 'UI/UX Design',
+        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
       },
     ],
   },
@@ -163,7 +175,7 @@ const About = () => {
                   <div>{item.stage}</div>
                   {/* icons */}
                   {item.icons?.map((icon, itemIndex) => {
-                    return <div>{icon}</div>;
+                    return <div className="text-2xl text-white">{icon}</div>;
                   })}
                 </div>
               );
