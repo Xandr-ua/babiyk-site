@@ -153,7 +153,7 @@ const About = () => {
             {aboutData.map((item, itemIndex) => {
               return (
                 <div
-                  key={itemIndex}
+                  key={item.title}
                   className={`${
                     index === itemIndex &&
                     'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'
